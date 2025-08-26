@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hacked Deta</title>
+<style>
+  :root{
+    --bg:#0f1724;
+    --card:#0b1220;
+    --accent:#00d1ff;
+    --glow: 0 8px 30px rgba(0,209,255,0.08);
+  }
+  *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(1000px 400px at 10% 10%, rgba(0,209,255,0.03), transparent),
+      linear-gradient(180deg,#071022 0%, #0b0f16 100%);
+    color:#e6eef8;
+    padding:24px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:920px;
+    display:grid;
+    grid-template-columns: 1fr 420px;
+    gap:28px;
+    align-items:start;
+  }
+
+  .panel{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:18px;
+    padding:22px;
+    box-shadow:var(--glow);
+    border:1px solid rgba(255,255,255,0.03);
+  }
+
+  .left{
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  h1{
+    margin:0 0 8px 0;
+    font-size:20px;
+    letter-spacing:0.4px;
+  }
+  p.lead{margin:0 0 18px 0; color:#9fb7cc; font-size:13px}
+
+  form{display:flex;flex-direction:column; gap:12px}
+  label{font-size:12px;color:#9fb7cc}
+  input[type="text"]{
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.04);
+    background:rgba(255,255,255,0.01);
+    color:inherit;
+    outline:none;
+    font-size:14px;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6) inset;
+  }
+
+  .hint{font-size:12px;color:#6ea0b9}
+
+  button{
+    margin-top:8px;
+    padding:12px 14px;
+    border-radius:12px;
+    border: none;
+    font-weight:600;
+    cursor:pointer;
+    background:linear-gradient(90deg,var(--accent), #6cf3ff 60%);
+    color:#02222a;
+    transform:translateZ(0);
+    box-shadow: 0 8px 30px rgba(0,209,255,0.12);
+  }
+  button:disabled{
+    opacity:0.45;
+    cursor:not-allowed;
+    box-shadow:none;
+  }
+
+  .reel-strip{
+    margin-top:18px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .reel{
+    padding:8px 12px;
+    border-radius:999px;
+    background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.02);
+    font-weight:700;
+    letter-spacing:1px;
+    transform:translateY(0);
+    animation: float 3s ease-in-out infinite;
+  }
+  .reel:nth-child(2){animation-delay:.2s}
+  .reel:nth-child(3){animation-delay:.4s}
+  @keyframes float {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  .right{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:6px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.03);
+  }
+  th,td{
+    text-align:left;
+    padding:12px 14px;
+    font-size:14px;
+    border-bottom:1px dashed rgba(255,255,255,0.02);
+  }
+  th{font-size:12px;color:#9fb7cc}
+
+  .badge{
+    display:inline-block;
+    padding:6px 8px;
+    border-radius:8px;
+    font-weight:700;
+    background:linear-gradient(90deg,#ffc857,#ff7b7b);
+    color:#081018;
+    box-shadow:0 8px 22px rgba(255,120,100,0.12);
+  }
+
+  /* small screens */
+  @media (max-width:880px){
+    .wrap{grid-template-columns:1fr; padding:12px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel left">
+      <h1>Hacked Metadeta Ues - ID Password</h1>
+      <p class="lead">Type the ID exactly <strong></strong> to enable the button.</p>
+
+      <form id="checkForm" autocomplete="off">
+        <label for="userid">Enter Instagram ID</label>
+        <input id="userid" type="text" value="" placeholder="Enter ID here" />
+
+        <div class="hint">Correct ID: <code>b.h.h.king</code></div>
+
+        <button id="checkBtn" type="submit" disabled>Submit</button>
+
+        <div class="reel-strip" aria-hidden="true">
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+          <span class="reel">REEL</span>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel right" id="resultPanel">
+      <h1>Result</h1>
+      <p class="lead">Submit the correct ID to view the table below.</p>
+
+      <div id="tableContainer" style="min-height:120px; display:flex; align-items:center; justify-content:center; color:#7ea9bd">
+        Waiting for valid ID...
+      </div>
+    </div>
+  </div>
+
+<script>
+  const allowedId = "deepakyadav420_302";
+  const userid = document.getElementById("userid");
+  const checkBtn = document.getElementById("checkBtn");
+  const form = document.getElementById("checkForm");
+  const tableContainer = document.getElementById("tableContainer");
+
+  userid.addEventListener("input", ()=>{
+    const val = userid.value.trim();
+    checkBtn.disabled = (val !== allowedId);
+  });
+
+  form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const val = userid.value.trim();
+    if(val !== allowedId){
+      alert("Invalid ID. Enter: " + allowedId);
+      return;
+    }
+
+    const name = "Deepak yadav";
+    const id = val;
+    const password = "deepak@yadav";
+    const hackingLuck = "Very High";
+
+    const html = `
+      <table>
+        <thead>
+          <tr><th>Field</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Name</td><td>${escapeHtml(name)}</td></tr>
+          <tr><td>ID</td><td>${escapeHtml(id)}</td></tr>
+          <tr><td>Password</td><td>${escapeHtml(password)}</td></tr>
+          <tr><td>Hacking Luck</td><td><span class="badge">${escapeHtml(hackingLuck)}</span></td></tr>
+        </tbody>
+      </table>
+    `;
+    tableContainer.innerHTML = html;
+  });
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(m){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+    });
+  }
+</script>
+</body>
+</html>
